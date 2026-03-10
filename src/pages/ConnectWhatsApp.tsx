@@ -257,7 +257,7 @@ export default function ConnectWhatsApp() {
     };
 
   }, [popup, refreshWhatsAppNumbers, toast]);
-}
+
 
   if (loadingConnection) {
     return (
@@ -346,3 +346,4 @@ export default function ConnectWhatsApp() {
       </PageContainer>
     </AppLayout>
   );
+}
