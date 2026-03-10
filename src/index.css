@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SalesConnect Design System
+   Inspired by Stripe/Linear - Clean, Professional, Trustworthy
+   All colors in HSL format
+*/
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+
+    /* Cards & Surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary - Deep Slate */
+    --primary: 222 47% 11%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Secondary - Light Gray */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    /* Muted */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent - Teal */
+    --accent: 173 80% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Brand Teal for CTAs */
+    --brand: 173 80% 40%;
+    --brand-foreground: 0 0% 100%;
+    --brand-hover: 173 80% 35%;
+
+    /* Status Colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --success-muted: 142 76% 95%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --warning-muted: 38 92% 95%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-muted: 0 84% 97%;
+
+    --info: 210 100% 50%;
+    --info-foreground: 0 0% 100%;
+    --info-muted: 210 100% 96%;
+
+    /* Borders & Inputs */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 173 80% 40%;
+
+    --radius: 0.625rem;
+
+    /* Sidebar */
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 173 80% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 47% 18%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 222 47% 18%;
+    --sidebar-ring: 173 80% 40%;
+    --sidebar-muted: 222 47% 15%;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md:
+      0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    --shadow-lg:
+      0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+    --shadow-xl:
+      0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+
+    /* Chart colors */
+    --chart-1: 173 80% 40%;
+    --chart-2: 222 47% 40%;
+    --chart-3: 142 76% 36%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 0 84% 60%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 173 80% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --brand: 173 80% 45%;
+    --brand-foreground: 0 0% 100%;
+    --brand-hover: 173 80% 50%;
+
+    --success: 142 76% 42%;
+    --success-muted: 142 50% 15%;
+
+    --warning: 38 92% 55%;
+    --warning-muted: 38 50% 15%;
+
+    --destructive: 0 84% 65%;
+    --destructive-muted: 0 50% 15%;
+
+    --info: 210 100% 55%;
+    --info-muted: 210 50% 15%;
+
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 173 80% 45%;
+
+    --sidebar-background: 222 47% 5%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 173 80% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 47% 12%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 222 47% 12%;
+    --sidebar-ring: 173 80% 45%;
+    --sidebar-muted: 222 47% 10%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Custom scrollbar */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/30;
+  }
+
+  /* Gradient backgrounds */
+  .gradient-brand {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--brand)) 0%,
+      hsl(173 80% 50%) 100%
+    );
+  }
+
+  .gradient-hero {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary)) 0%,
+      hsl(222 47% 20%) 100%
+    );
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-white/80 backdrop-blur-lg border border-white/20;
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  /* Fade in animation */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Slide in animation */
+  .animate-slide-in {
+    animation: slideIn 0.2s ease-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Pulse animation for status indicators */
+  .pulse-success {
+    animation: pulseSuccess 2s infinite;
+  }
+
+  @keyframes pulseSuccess {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 hsla(142, 76%, 36%, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 6px hsla(142, 76%, 36%, 0);
+    }
+  }
+}
+
+[data-radix-portal] {
+  pointer-events: none;
+}
