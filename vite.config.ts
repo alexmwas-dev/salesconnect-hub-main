@@ -19,6 +19,7 @@ export default defineConfig(({ mode }) => ({
       "localhost:8081",
       "d85a-62-8-79-110.ngrok-free.app",
       "b084-62-8-79-110.ngrok-free.app",
+      "salesconnect-hub.onrender.com",
     ],
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(
